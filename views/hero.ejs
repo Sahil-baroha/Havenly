@@ -1,0 +1,26 @@
+<% layout("/layouts/boilerplate") %>
+
+
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+
+  <% for(let i=0; i< data.length;i++){ %>
+
+    
+    <div class="card">
+      <img  src="<%= data[i].image.url%>" class="card-img-top" alt="..." style="height: 20rem;">
+      <div class="card-body">
+        <h5 class="card-title"> <%= data[i].title %></h5>
+        <p class="card-text"> <%= data[i].description %> 
+        </p>
+        <br>
+        <p>
+          &#8377;<%= data[i].price ? data[i].price.toLocaleString("en-IN") : "N/A" %>
+        </p>
+        
+        <a  href="/detail/<%= data[i]._id %>" class="btn btn-primary"> More..</a>
+      </div>
+    </div>
+    <% } %>
+</div>
+

@@ -1,0 +1,43 @@
+<% layout("/layouts/boilerplate") %>
+
+    <div class="row">
+        <div class="col-8 offset-2">
+
+            <form action="/edit/<%=Listing._id%>?_method=PATCH" method="POST">
+                <div>
+                    <label for="title" class="form-label"></label>
+                    <input type="text" class="form-control" value="<%=Listing.title%>" placeholder="title"
+                        name="Listing[title]"><br>
+                </div>
+                <div>
+                    <label for="" class="form-label"></label>
+                    <textarea name="Listing[description]" class="form-control"
+                        placeholder="description"><%=Listing.description%></textarea> <br>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <div>
+                            <label for="" class="form-label"></label>
+                            <input class="form-control" type="number" name="Listing[price]" value="<%=Listing.price%>"
+                                placeholder="price"> <br>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 col-md-8">
+                        <div>
+                            <label for="" class="form-label"></label>
+                            <input class="form-control" type="text" name="Listing[country]" value="<%=Listing.country%>"
+                                placeholder="country"><br>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="" class="form-label"></label>
+                        <input class="form-control" type="text" name="Listing[location]" value="<%=Listing.location%>"
+                            placeholder="location"> <br>
+                    </div>
+                </div>
+                <button id="add-btn"> Edit </button>
+            </form>
+        </div>
+    </div>
